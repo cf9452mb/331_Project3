@@ -11,6 +11,9 @@
 //-------------------------------------------------------------
 #include <string>
 #include <vector>
+#include <fstream>
+#include <stdio.h>
+#include <sstream>
 #include "block.h"
 //
 // @file block.cpp
@@ -28,7 +31,7 @@
 // @post This function returns the number of block counts.
 //
 const int Block::getblockcount(){
-    return block_count;
+    return blockCount;
 }
 //
 //  accessor for record_count
@@ -72,7 +75,7 @@ void Block::setavail_list(std::vector<int> list){
 // @post This function sets the value of block count.
 //
 void Block::setblockcount(int bcount){
-    block_count = bcount;
+    blockCount = bcount;
 }
 //
 //  Mutator for the record count
@@ -82,7 +85,7 @@ void Block::setblockcount(int bcount){
 // @pre None
 // @post This function sets the value of record count.
 //
-void Block::setrecordcount(int rcount)){
+void Block::setrecordcount(int rcount){
     record_count = rcount;
 }
 //
@@ -95,4 +98,54 @@ void Block::setrecordcount(int rcount)){
 //
 void Block::setheadblock_no(int hblock){
     headblock_no = hblock;
+}
+
+//
+//  accessor for index file
+//
+// @param None
+// @return This function returns the index file
+// @pre None
+// @post This function returns the index file
+//
+const std::string Block::getindex(){
+    return indexFile;
+}
+
+//
+//  Mutator for the index file
+//
+// @param String This function takes a string value called index_file as parameter to set the value of the index file
+// @return None
+// @pre None
+// @post This function sets the value of index file
+//
+void Block::setindex(std::string Indexfile){
+    indexFile = Indexfile;
+}
+
+/*int Block::Read(std::ifstream& sequence_set)
+{};*/
+
+int Block::Write(std::ostream &out_s){
+	std::ofstream file;
+	file.open(sequence_set);
+		file << "blocked sequence set with comma separated fields, length-indicated records" << endl
+		 << "1" << endl
+		 << "1024" << endl
+		 << "512" << endl
+		 << "ASCII" << endl
+		 << maxBlockSize << endl
+		 << "50" << endl
+		 << indexFile << endl
+		 << "primaryIndex,blockNumber" << endl
+		 << totalRec << endl
+		 << blockCount << endl
+		 << '6' << endl
+		 << "Zip Code,Place,State,County,Lat,Long" << endl
+		 << "Zip Code" << endl
+		 << availBlock << endl
+		 << '1' << endl
+		 << '1' << endl;
+	return 1;
 }
