@@ -25,9 +25,9 @@
 class Block
 { 
 private:
-int block_count, record_count, headblock_no;
+int blockCount, record_count, headblock_no, maxBlockSize, totalRec, availBlock; 
 std::vector<int>avail_list;
-std::string sequence_set, index_file;
+std::string sequence_set, indexFile;
 
 public:
 /**
@@ -93,6 +93,48 @@ void setrecordcount(int rcount);
  * @post This function sets the value of head block number
  */
 void setheadblock_no(int hblock);
+
+/**
+ *  accessor for index file
+ *
+ * @param None
+ * @return This function returns the index file
+ * @pre None
+ * @post This function returns the index file
+*/
+ const std::string getindex();
+ 
+ /**
+ *  Mutator for the index file
+ *
+ * @param String This function takes a string value called index_file as parameter to set the value of the index file
+ * @return None
+ * @pre None
+ * @post This function sets the value of index file
+*/
+void setindex(std::string index_file);
+
+/**
+ * Reads a record from the inputted file
+ *
+ * @param ifstream The file stream where the record is to be read from
+ * @return 0 if no more records are to be read from file, 1 otherwise
+ * @pre 
+ * @post The size and contents of the buffer are read and set.
+*/
+int Read(std::ifstream& sequence_set);
+
+/**
+ * The size of the record and contents(with delimiter character) are written to the file
+ *
+ * @param fstream The file stream to be written too
+ * @return This returns 1 on success
+ * @pre The size and fields members must be set previously by Pack()
+ * @post The record is written to the file with size at the beginning and delimiters between the fields
+*/
+int Write(std::ostream &out_s);
+
+
 };
 #endif
 
