@@ -93,5 +93,6 @@ void setrecordcount(int rcount);
  * @post This function sets the value of head block number
  */
 void setheadblock_no(int hblock);
+};
 #endif
 
