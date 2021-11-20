@@ -142,7 +142,12 @@ int Block::Write(std::ostream &out_s){
 		 << '6' << endl
 		 << "Zip Code,Place,State,County,Lat,Long" << endl
 		 << "Zip Code" << endl
-		 << avail_list[0] << endl
+		 << avail_list[0];
+		 for (i = 1; i < avail_list; i++)
+		 {
+			out_s << ' ' << avail_list[i]
+		 }
+		 out_s << endl
 		 << '1' << endl
 		 << '1' << endl;
 	return 1;
