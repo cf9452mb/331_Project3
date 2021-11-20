@@ -128,9 +128,7 @@ void Block::setindex(std::string Indexfile){
 {};*/
 
 int Block::Write(std::ostream &out_s){
-	std::ofstream file;
-	file.open(sequence_set);
-		file << "blocked sequence set with comma separated fields, length-indicated records" << endl
+		out_s << "blocked sequence set with comma separated fields, length-indicated records" << endl
 		 << "1" << endl
 		 << "1024" << endl
 		 << "512" << endl
