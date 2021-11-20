@@ -22,6 +22,18 @@
 // @author Myint Aung
 //
 
+//converting string to integer
+int Block :: str2int (const string &s) const
+{
+	int result = 0;
+	for (int i = 0; i < s.length(); i++)
+	{
+		int num = s[i] - '0';
+		result = result*10 + num;
+	}
+	return result;
+}
+
 //
 //  accessor for block_count
 //
@@ -124,8 +136,23 @@ void Block::setindex(std::string Indexfile){
     indexFile = Indexfile;
 }
 
-/*int Block::Read(std::ifstream& sequence_set)
-{};*/
+int Block::Read(std::istream& in_s){
+	(for int i = 0; i < 17, i ++){
+		string line;
+		getline(infile, line);
+		if (i = 5)
+		{maxBlockSize = str2int(line);}
+	if (i = 7)
+		{indexFile = line;}
+	if (i = 9)
+		{totalRec = str2int(line);}
+	if (i = 10)
+		{blockCount = str2int(line);}
+	if (i = 15)
+	{headblock_no = str2int(line);}
+	}
+	return 0;
+}
 
 int Block::Write(std::ostream &out_s){
 		out_s << "blocked sequence set with comma separated fields, length-indicated records" << endl
@@ -148,7 +175,7 @@ int Block::Write(std::ostream &out_s){
 			out_s << ' ' << avail_list[i]
 		 }
 		 out_s << endl
-		 << '1' << endl
+		 << headblock_no << endl
 		 << '1' << endl;
 	return 1;
 }
