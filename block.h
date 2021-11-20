@@ -122,7 +122,7 @@ void setindex(std::string index_file);
  * @pre 
  * @post The size and contents of the buffer are read and set.
 */
-int Read(std::ifstream& sequence_set);
+int Read(std::istream& in_s);
 
 /**
  * The size of the record and contents(with delimiter character) are written to the file
@@ -134,7 +134,7 @@ int Read(std::ifstream& sequence_set);
 */
 int Write(std::ostream &out_s);
 
-
+int str2int (const string &s) const;
 };
 #endif
 
