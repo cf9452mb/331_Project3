@@ -137,9 +137,9 @@ void Block::setindex(std::string Indexfile){
 }
 
 int Block::Read(std::istream& in_s){
-	(for int i = 0; i < 17, i ++){
-		string line;
-		getline(infile, line);
+	for (int i = 0; i < 17, i ++;){
+		std::string line;
+		getline(in_s, line);
 		if (i = 5)
 		{maxBlockSize = str2int(line);}
 	if (i = 7)
@@ -170,9 +170,9 @@ int Block::Write(std::ostream &out_s){
 		 << "Zip Code,Place,State,County,Lat,Long" << endl
 		 << "Zip Code" << endl
 		 << avail_list[0];
-		 for (i = 1; i < avail_list; i++)
+		 for (int i = 1; i < avail_list; i++)
 		 {
-			out_s << ' ' << avail_list[i]
+			out_s << ' ' << avail_list[i];
 		 }
 		 out_s << endl
 		 << headblock_no << endl
