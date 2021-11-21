@@ -1,85 +1,79 @@
 //------------------------------------------------------------------
 // BlockNode.h
 // BlockNode class 
-// Author: Anuja Modi
+// Author: Anuja Modi, Jordan Hebler
 //------------------------------------------------------------------
 // This header file includes the block node class
 
 #ifndef BLOCKNODE_H
 #define BLOCKNODE_H
 
-class BlockNode {
+#include <string>
+#include <vector>
+#include <iostream>
+using namespaces std;
+
+template<class dataType>
+class BlockNode 
+{
 private:
-	long quantity;
-	std::set<Record*> recordsSet;
+	/// Vector stores data
+	vector<dataType> data;
+	/// Block number
+	int blockNumber = 0;
+	/// Number of records in this block
+	int numberOfRecords = 0;
+	/// Succeeded block
+	int succeededBlock = 0;
+	/// Preceded block
+	int precededBlock = 0;
+	/// @brief string to int converter
+	/// @return int value of the string s
+	int str2int (const string &s) const;
 
 public:
-	/**
-	 * Default constructor. Just returns an instance.
-	 */
+	/// @brief Default Constructor
 	BlockNode();
 
-	/**
-	 * Default destructor. 
-	 */
-	~BlockNode();
+	/// @brief Get block number
+	/// @return Block number
+	int getBlockNumber() const;
+	
+	/// @brief Get block's size
+	/// @return An int of block size
+	int getDataSize() const;
+		
+	/// @brief Get number of records
+	/// @return An int of number of records
+	int getNumRecs() const;
+		
+	/// @brief Get i-th data
+	/// @return A record
+	dataType getData(const int num) const;
+	
+	// @brief Add new data entry
+	// @param anEntry An data entry
+	//bool addData(const dataType &anEntry);	This will be used for adding to the block
+		
+	// @brief Remove a data entry by position
+	// @param position The position need to be removed
+	//bool removeData(const int &position);		This will be used for removing from the block
 
-	/**
-	 * It gets a Record object and add it inside
-	 * the set of Records.
-	 *
-	 * @param a Record object 
-	 */
-	void addRecordToBlockSet(Record* record);
-
-	/**
-	 * It gets a Record object and removes it from 
-	 * Records set.
-	 * 
-	 * @param a Record object
-	 */
-	void removeRecordFromBlockSet(Record* record);
-
-	/**
-	 * It gets a zip code and use it to search for
-	 * a Record object inside set.
-	 * 
-	 * @pram long for zip code
-	 */
-	void removeRecordFromBlockByZipCode(long zipCode);
-
-	/**
-	 * It gets a zip code and search for a Record with
-	 * given value.
-	 * If a Record with given zip code is inside set, this
-	 * object'll be return. If not, it returns NULL.
-	 * 
-	 * @param a zip code
-	 * @return object found or NULL
-	 */
-	Record* findRecordByZipCode(long zipCode);
-
-	/**
-	 * It returns how many Record objects there are 
-	 * inside the set.
-	 * 
-	 * @return Record objects quantity
-	 */
-	long getRecordsSizeInsideBlockSet();
-
-	/**
-	 * It returns a reference to records set.
-	 *
-	 * @return reference for records set
-	 */
-	std::set<Record*> getRecordsSet();
-
-	/**
-     * It returns instance state in a string
-     *
-     * @return a string with attribute values.
-     */
-	std::string toString();
+	/// @brief Get succeeded block
+	/// @return A block
+	int getSBlockNumber() const;
+		
+	/// @brief Get preceded block
+	/// @return A block
+	int getPBlockNumber() const;
+		
+	/// @brief Set succeeded block
+	/// @param A block
+	void setSBlock(const int &val);
+		
+	/// @brief Set preceded block
+	/// @param A block
+	void setPBlock(const int &val);
 };
 
 #endif
