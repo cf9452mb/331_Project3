@@ -7,8 +7,17 @@
 // It includes the data members needed for the 
 //------------------------------------------------------------------
 
-#ifndef BUFFER.H
-#define BUFFER.H
+#ifndef BLOCK_BUFFER_H
+#define BLOCK_BUFFER_H
+#define UINT_MAX2   4294967295
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <sstream>
+
+using namespace std;
+
 /**
  * @file buffer.h
  * @brief This is the header file for the buffer class
@@ -16,11 +25,6 @@
  * @author Justine Canlas
  * 
  */
-
-#include <string>
-#include <vector>
-#include <iostream>
-using namespace std;
 
 class BlockBuffer
 {
