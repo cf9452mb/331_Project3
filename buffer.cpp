@@ -72,10 +72,10 @@ bool BlockBuffer::unpackField(string &aStr)
 	for (int i = start; i < bufferSize; i++)
 	{
     
-        if (buffer[i] == delim || buffer[i] == '\n'){
-            len = i - start;
-            break;
-        }
+        	if (buffer[i] == delim || buffer[i] == '\n'){
+            		len = i - start;
+            		break;
+        	}
 	}
 	
 	// delimeter not found
