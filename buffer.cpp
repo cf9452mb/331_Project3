@@ -101,7 +101,60 @@ void BlockBuffer::clear()
 // @pre infile must be declared first in the program, the header must be eliminated.
 // @post Read the data in infile to buffer
 // @return Returns true if the stream is opened and the buffer is not overflow, false otherwise.
-bool BlockBuffer::read(istream& infile);
+bool BlockBuffer::read(istream& infile)
+{
+	// clear buffer
+	clear();
+	
+	if(infile.eof()) return false;
+	
+	// read block size
+	string line;
+	getline(infile,line);
+	
+	int dataCount = 1;
+	for (int i = 1; i < line.length(); i++)
+	{
+		if (line[i] == ',') {dataCount++; continue;}
+		if (dataCount == 1)
+		{
+			int num = line[i] - '0';
+			blockNumber = blockNumber * 10 + num;
+		}
+		else if (dataCount == 2)
+		{
+			int num = line[i] - '0';
+			numRecs = numRecs * 10 + num;
+		}
+		else if (dataCount == 3)
+		{
+			int num = line[i] - '0';
+			pBlockNumber = pBlockNumber * 10 + num;
+		}
+		else if (dataCount == 4)
+		{
+			int num = line[i] - '0';
+			sBlockNumber = sBlockNumber * 10 + num;
+		}
+		else
+		{
+			break;
+		}
+	}
+	
+	// get data in the block to buffer
+	for (int i = 0; i < numRecs; i++)
+	{
+		getline(infile,line);
+		bufferSize += line.length();
+		buffer += line + '\n';
+		if (bufferSize > maxByte)
+			{cout << "Buffer overloaded" << endl; return false;}
+	}
+	bufferSize = buffer.length();
+	return true;
+}
+
 
 // @brief Get the next field from readed file stream
 // @param A string& aStr
