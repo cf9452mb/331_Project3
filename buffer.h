@@ -26,8 +26,8 @@ class BlockBuffer
 {
   private:
   
-  /// Delimiter
-	char delim = ',';
+  	/// Delimiter
+  	char delim = ',';
 	/// The buffer
 	string buffer; 
 	/// Size of the buffer string
@@ -51,43 +51,43 @@ class BlockBuffer
   
   public:
   
-  /**
-   * Default Constructor
-   */
-  BlockBuffer();
+  	/// @brief default constructor
+  	BlockBuffer(char del = ',');
   
-  /**
-  *
-  * @param
-  * @return
-  * @pre
-  * @post
-  */
-  int NumberofRecords
+  	/// @brief Get the current block's size
+	/// @return blockSize
+  	const int getNumRecs();
+	
+	/// @brief Get the current block's number
+	/// @return blockNumber
+	int getBlockNumber() const;
+		
+	/// @brief Get the succeeded block's number
+	/// @return sBlockNumber
+	int getSBlockNumber() const;
+		
+	/// @brief Get the preceded block's number
+	/// @return pBlockNumber
+	int getPBlockNumber() const;
   
-  /**
-  *
-  * @param
-  * @return
-  * @pre
-  * @post
-  */
-  const int getNumRecs();
-  
-  /**
-  *
-  * @param
-  * @return
-  * @pre
-  * @post
-  */
-  int Read(
-  
-  /**
-  *
-  * @param
-  * @return
-  * @pre
-  * @post
-  */
-  int Unpack
+  	/// @brief Read from the file stream block by block
+	/// @param infile file stream is passed in
+	/// @pre infile must be declared first in the program, the header must be eliminated.
+	/// @post Read the data in infile to buffer
+	/// @return Returns true if the stream is opened and the buffer is not overflow, false otherwise.
+	bool read(istream& infile);
+		
+	/// @brief Get the next field from readed file stream
+	/// @param A string& aStr
+	/// @post Pass the next field in buffer to aStr
+	/// @return Returns true if the next field is readed, false otherwise.
+	bool unpackField(string &aStr);
+	
+	/// @brief Clear the buffer
+	/// @param No parameters passed
+	/// @post bufferSize and nextCharIndex are set to 0
+	void clear();
+	
+};
+
+#endif
