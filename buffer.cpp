@@ -13,7 +13,12 @@ void BlockBuffer::setNumRecs(const int &val)
   
 void BlockBuffer::setBlockNumber(const int &val);
 
-BlockBuffer::BlockBuffer(char del = ',');
+BlockBuffer::BlockBuffer(char del )
+{
+	delim = del; 
+	bufferSize = 0; 
+	nextCharIndex = 0;
+}
 
 int BlockBuffer::getNumRecs() const;
 
