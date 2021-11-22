@@ -59,6 +59,7 @@ void BlockBuffer::clear()
 
 bool BlockBuffer::read(istream& infile);
 
+/// @brief Get the next field from readed file stream
 bool BlockBuffer::unpackField(string &aStr)
 {
 	aStr = ""; //clear aStr
