@@ -4,7 +4,7 @@
 // Author: Myint Aung
 //------------------------------------------------------------------
 // This header file includes the block class
-// It includes the data members of the block class and the functios to read and write headers.
+// It includes the data members of the block class and the functions to read and write headers.
 //------------------------------------------------------------------
 
 #ifndef BLOCK_H
