@@ -10,8 +10,14 @@
 #include "buffer.h"
 
 void BlockBuffer::setNumRecs(const int &val)
-  
+{
+	this->numRecs = val;
+}
+
 void BlockBuffer::setBlockNumber(const int &val);
+{
+	this->blockNumber = val;
+}
 
 BlockBuffer::BlockBuffer(char del )
 {
@@ -21,12 +27,24 @@ BlockBuffer::BlockBuffer(char del )
 }
 
 int BlockBuffer::getNumRecs() const;
+{
+	return this->numRecs;
+}
 
 int BlockBuffer::getBlockNumber() const;
+{
+	return this->blockNumber;
+}
 
 int BlockBuffer::getSBlockNumber() const;
+{
+	return this->sBlockNumber;
+}
 
 int BlockBuffer::getPBlockBuffer() const;
+{
+	return this->pBlockBuffer;
+}
 
 bool BlockBuffer::read(istream& infile);
 
