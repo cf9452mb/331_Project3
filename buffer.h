@@ -3,8 +3,11 @@
 // Buffer class 
 // Author: Justine Canlas, Jordan Hebler
 //------------------------------------------------------------------
-// This header file includes the buffer class 
-// It includes the data members needed for the 
+// This header file includes a class called the BlockBuffer which
+// includes functions that will set the number of records, set the
+// block number, get the number of records, get the block number, 
+// get the succeeded block number, get the preceeded block number, 
+// clear the buffer, as well as read and unpack functions. 
 //------------------------------------------------------------------
 
 #ifndef BLOCK_BUFFER_H
@@ -22,8 +25,7 @@ using namespace std;
  * @file buffer.h
  * @brief This is the header file for the buffer class
  *
- * @author Justine Canlas
- * 
+ * @author Justine Canlas, Jordan Hebler
  */
 
 class BlockBuffer
@@ -48,9 +50,19 @@ class BlockBuffer
 	int sBlockNumber = 0;
 	/// Succeeded block number
 	int pBlockNumber = 0;
+	
 	/// @brief Set the current block's size to a certain value
+	/// @param This function takes an integer value called val as parameter. 
+	/// @pre None
+	/// @post This function sets the value of numRecs.
+	/// @return None
 	void setNumRecs(const int &val);
+	
 	/// @brief Set the current block's number to a certain value
+	/// @param This function takes an integer value called val as a parameter. 
+	/// @pre None
+	/// @post This function sets the value of blockNumber.
+	/// @return None
 	void setBlockNumber(const int &val);
   
   public:
@@ -58,19 +70,31 @@ class BlockBuffer
   	/// @brief default constructor
   	BlockBuffer(char del = ',');
   
-  	/// @brief Get the current block's size
+  	/// @brief This gets the current block's size.
+	/// @param None
+	/// @pre None
+	/// @post This function returns the blockSize.
 	/// @return blockSize
-  	const int getNumRecs();
+  	int getNumRecs() const;
 	
-	/// @brief Get the current block's number
+	/// @brief This gets the current block's number.
+	/// @param None
+	/// @pre None
+	/// @post This function returns the blockNumber.
 	/// @return blockNumber
 	int getBlockNumber() const;
 		
-	/// @brief Get the succeeded block's number
+	/// @brief This gets the succeeded block's number.
+	/// @param None
+	/// @pre None
+	/// @post This function returns the sBlockNumber.
 	/// @return sBlockNumber
 	int getSBlockNumber() const;
 		
-	/// @brief Get the preceded block's number
+	/// @brief This gets the preceded block's number.
+	/// @param None
+	/// @pre None
+	/// @post This function returns the pBlockNumber.
 	/// @return pBlockNumber
 	int getPBlockNumber() const;
   
@@ -83,13 +107,16 @@ class BlockBuffer
 		
 	/// @brief Get the next field from readed file stream
 	/// @param A string& aStr
+	/// @pre None
 	/// @post Pass the next field in buffer to aStr
 	/// @return Returns true if the next field is readed, false otherwise.
 	bool unpackField(string &aStr);
 	
 	/// @brief Clear the buffer
 	/// @param No parameters passed
+	/// @pre None
 	/// @post bufferSize and nextCharIndex are set to 0
+	/// @return 
 	void clear();
 	
 };
