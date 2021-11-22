@@ -27,4 +27,13 @@ bool BlockBuffer::read(istream& infile);
 
 bool BlockBuffer::unpackField(string &aStr);
 
-void BlockBuffer::clear();
+void BlockBuffer::clear()
+{
+	bufferSize = 0;
+	blockNumber = 0;
+	sBlockNumber = 0;
+	pBlockNumber = 0;
+	nextCharIndex = 0;
+	buffer = "";
+	numRecs = 0;
+}
