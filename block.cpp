@@ -135,7 +135,14 @@ const std::string Block::getindex(){
 void Block::setindex(std::string Indexfile){
     indexFile = Indexfile;
 }
-
+/**
+ * Reads a record from the inputted file
+ *
+ * @param ifstream The file stream where the record is to be read from
+ * @return 0 if no more records are to be read from file, 1 otherwise
+ * @pre 
+ * @post The size and contents of the buffer are read and set.
+*/
 int Block::Read(std::istream& in_s){
 	for (int i = 0; i < 17, i ++;){
 		std::string line;
@@ -153,7 +160,13 @@ int Block::Read(std::istream& in_s){
 	}
 	return 0;
 }
-
+//
+// Writes the record to get the desired outputs
+//
+// @param ostream The file stream to be written too
+// @return This returns 1 on success
+// @pre None
+// @post The record is written to the file 
 int Block::Write(std::ostream &out_s){
 		out_s << "blocked sequence set with comma separated fields, length-indicated records" << endl
 		 << "1" << endl
