@@ -1,7 +1,7 @@
 //------------------------------------------------------------------
 // buffer.h
 // Buffer class 
-// Author: Justine Canlas
+// Author: Justine Canlas, Jordan Hebler
 //------------------------------------------------------------------
 // This header file includes the buffer class 
 // It includes the data members needed for the 
@@ -94,4 +94,5 @@ class BlockBuffer
 	
 };
 
+#include "buffer.cpp"
 #endif
