@@ -125,15 +125,18 @@ void setindex(std::string index_file);
 int Read(std::istream& in_s);
 
 /**
- * The size of the record and contents(with delimiter character) are written to the file
+ * Writes the record to get the desired outputs
  *
- * @param fstream The file stream to be written too
+ * @param ostream The file stream to be written too
  * @return This returns 1 on success
- * @pre The size and fields members must be set previously by Pack()
- * @post The record is written to the file with size at the beginning and delimiters between the fields
+ * @pre None
+ * @post The record is written to the file 
 */
 int Write(std::ostream &out_s);
 
+/**
+* Function to convert string to integer
+*/
 int str2int (const string &s) const;
 };
 #endif
