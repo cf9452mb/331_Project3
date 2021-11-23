@@ -147,6 +147,10 @@ int Writeheader(std::ostream &out_s);
 * Function to convert string to integer
 */
 int str2int (const string &s) const;
+ 
+/// @brief Read block at a position
+/// @param The block need to be read position
+BlockNode<dataType> readBlock(const int &pos);
 
 bool findRecord(const string &keyStr);
  
