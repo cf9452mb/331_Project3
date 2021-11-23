@@ -1,7 +1,7 @@
 //------------------------------------------------------------------
 // BlockNode.h
 // BlockNode class 
-// Author: Anuja Modi, Jordan Hebler
+// Author: Anuja Modi, Jordan Hebler, Myint Aung, Justine Canlas
 //------------------------------------------------------------------
 // This header file includes the block node class
 
