@@ -23,7 +23,7 @@
 //
 
 //converting string to integer
-int Block :: str2int (const string &s) const
+int Block::str2int (const string &s) const
 {
 	int result = 0;
 	for (int i = 0; i < s.length(); i++)
