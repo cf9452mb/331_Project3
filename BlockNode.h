@@ -27,14 +27,16 @@ private:
 	int succeededBlock = 0;
 	/// Preceded block
 	int precededBlock = 0;
-	/// @brief string to int converter
-	/// @return int value of the string s
-	int str2int (const string &s) const;
+
 
 public:
 	/// @brief Default Constructor
 	BlockNode();
 
+	/// @brief string to int converter
+	/// @return int value of the string s
+	int str2int (const string &s) const;
+	
 	/// @brief Get block number
 	/// @return Block number
 	int getBlockNumber() const;
