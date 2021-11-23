@@ -27,6 +27,8 @@ private:
 	int succeededBlock = 0;
 	/// Preceded block
 	int precededBlock = 0;
+	///DataSize
+	int datasize = 0;
 
 
 public:
