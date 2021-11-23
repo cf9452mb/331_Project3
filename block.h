@@ -131,7 +131,7 @@ void setindex(std::string index_file);
  * @pre 
  * @post The size and contents of the buffer are read and set.
 */
-int Read(std::istream& in_s);
+int Readheader(std::istream& in_s);
 
 /**
  * Writes the record to get the desired outputs
@@ -141,7 +141,7 @@ int Read(std::istream& in_s);
  * @pre None
  * @post The record is written to the file 
 */
-int Write(std::ostream &out_s);
+int Writeheader(std::ostream &out_s);
 
 /**
 * Function to convert string to integer
