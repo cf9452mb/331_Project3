@@ -1,10 +1,20 @@
-
+//-------------------------------------------------------------
+// BlockNode.cpp
+// This is the implementation file for the BlockNode.h
+// Author: Anuja Modi, Jordan Hebler, Myint Aung, Justine Canlas
+//-------------------------------------------------------------
+// This .cpp file contains the functions of the class BlockNode
+//
+// This file makes use of the functions of the class BlockNode which
+// will set and return the values of the data members of the class
+//-------------------------------------------------------------
 #include <string>
 #include <vector>
 #include <iostream>
 using namespace std;
 #include "BlockNode.h"
 
+//Converting int to string
 template<class dataType>
 int BlockNode::str2int (const string &s) const
 {
@@ -17,7 +27,14 @@ int BlockNode::str2int (const string &s) const
 	return result;
 }
 
-
+//
+//  default constructor for block node
+//
+// @param None
+// @return This function sets the default values of the data members of block node
+// @pre None
+// @post None
+//
 template<class dataType>
 BlockNode::BlockNode()
 {
@@ -28,28 +45,56 @@ BlockNode::BlockNode()
 	datasize = 0;
 }
 
-
+//
+//  accessor for Block Number
+//
+// @param None
+// @return This function returns the block number
+// @pre None
+// @post This function returns the block number
+//
 template<class dataType>
 int BlockNode::getBlockNumber()
 {
 	return blockNumber;
 }
 
-
+//
+//  accessor for data size
+//
+// @param None
+// @return This function returns the size of the data
+// @pre None
+// @post This function returns the size of the data
+//
 template<class dataType>
 int BlockNode::getDataSize()
 {
 	return datasize;
 }
 
-
+//
+//  accessor for number of records
+//
+// @param None
+// @return This function returns the number of records
+// @pre None
+// @post This function returns the number of records
+//
 template<class dataType>
 int BlockNode::getNumRecs()
 {
 	return numberOfRecords;
 }
 
-
+//
+//  accessor for data
+//
+// @param None
+// @return This function returns the data
+// @pre None
+// @post This function returns the data
+//
 template<class dataType>
 dataType BlockNode::getData(const int num){
 dataType datas;
