@@ -220,7 +220,7 @@ BlockNode<dataType> Block::readBlock(const int &pos){
 	BlockNode Bnode;
 	Bnode.setSBlock = Bbuff.getSBlockNumber;
 	Bnode.setPBlock = Bbuff.getPBlockBuffer;
-	for (int i = 0; i < Bbuff.getNumRecs; i ++;)
+	for (int i = 0; i < Bbuff.getNumRecs; i ++)
 	{
 		Blockbuffer newentry;
 		newentry.unpack(Bbuff);
