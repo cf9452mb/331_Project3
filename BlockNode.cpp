@@ -49,3 +49,27 @@ if (num < data.size() && num>=0)
 }
 return datas;
 }
+
+template<class dataType>
+int BlockNode::getSBlockNumber() const;
+{
+	return succeededBlock;
+}
+
+template<class dataType>
+int BlockNode::getPBlockNumber() const;
+{
+	return precededBlock;
+}
+
+template<class dataType>
+void BlockNode::setSBlock(const int &val)
+{
+	succeededBlock = val;
+}
+
+template<class dataType> 
+void BlockNode::setPBlock(const int &val)
+{
+	precededBlock = val;
+}
