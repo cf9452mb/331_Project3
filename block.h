@@ -139,5 +139,10 @@ int Write(std::ostream &out_s);
 */
 int str2int (const string &s) const;
 };
+
+bool findRecord(const string &keyStr);
+
+void sortRecords();
+
 #endif
 
