@@ -119,6 +119,9 @@ class BlockBuffer
 	/// @return 
 	void clear();
 	
+	/// @brief Increment the nextChar index
+        void increment();
+	
 };
 
 #include "buffer.cpp"
