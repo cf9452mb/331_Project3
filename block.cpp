@@ -22,6 +22,12 @@
 // @author Myint Aung
 //
 
+//Constructor
+Block::Block(string s)
+{
+	sequence_set = s;
+}
+
 //converting string to integer
 int Block::str2int (const string &s) const
 {
