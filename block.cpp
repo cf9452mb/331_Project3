@@ -15,19 +15,20 @@
 #include <stdio.h>
 #include <sstream>
 #include "block.h"
+#include "BlockNode.h"
+#include "buffer.h"
 //
 // @file block.cpp
 // @brief This is the implementation file for the class Block
 //
 // @author Myint Aung
 //
-
+template<class dataType>
 //Constructor
 Block::Block(string s)
 {
 	sequence_set = s;
 }
-
 //converting string to integer
 int Block::str2int (const string &s) const
 {
@@ -197,4 +198,48 @@ int Block::Writeheader(std::ostream &out_s){
 		 << headblock_no << endl
 		 << '1' << endl;
 	return 1;
+}
+
+template<class dataType>
+BlockNode<dataType> Block::readBlock(const int &pos){
+	ifstream readb;
+	readb.open(sequence_set);
+	    if(readb.fail()){
+        cout << "Failed to open Data file! Exiting program" << endl;
+        exit(1);
+    }
+	BlockBuffer Bbuff;
+	curblock = 1;
+	while ( curblock <= blockCount)
+	{
+		Bbuff.read(readb);
+		if (Bbuff.getBlocknumber == curblock)
+		{break;}
+		curblock++;
+	}
+	BlockNode Bnode;
+	Bnode.setSBlock = Bbuff.getSBlockNumber;
+	Bnode.setPBlock = Bbuff.getPBlockBuffer;
+	for (int i = 0; i < Bbuff.getNumRecs; i ++)
+	{
+		Blockbuffer newentry;
+		newentry.unpack(Bbuff);
+		Bnode.getData(newentry);
+	}
+	return Bnode;
+}
+		
+bool Block::findRecord(const string &keyStr){
+	
+	
+	
+}
+
+
+void Block::sortRecords(){
+	
+	
+	
+	
+	
 }
