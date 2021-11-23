@@ -28,7 +28,7 @@ int BlockNode::str2int (const string &s) const
 }
 
 //
-//  default constructor for block node
+// @brief Default constructor for block node
 //
 // @param None
 // @return This function sets the default values of the data members of block node
@@ -46,7 +46,7 @@ BlockNode::BlockNode()
 }
 
 //
-//  accessor for Block Number
+// @brief Accessor for Block Number
 //
 // @param None
 // @return This function returns the block number
@@ -60,7 +60,7 @@ int BlockNode::getBlockNumber()
 }
 
 //
-//  accessor for data size
+// @brief Accessor for data size
 //
 // @param None
 // @return This function returns the size of the data
@@ -74,7 +74,7 @@ int BlockNode::getDataSize()
 }
 
 //
-//  accessor for number of records
+// @brief Accessor for number of records
 //
 // @param None
 // @return This function returns the number of records
@@ -88,7 +88,7 @@ int BlockNode::getNumRecs()
 }
 
 //
-//  accessor for data
+// @brief Accessor for data
 //
 // @param None
 // @return This function returns the data
@@ -105,24 +105,53 @@ if (num < data.size() && num>=0)
 return datas;
 }
 
+//
+// @brief Accessor for the succeded block
+//
+// @param None
+// @return This function returns the succeededBlock
+// @pre None
+// @post This function returns the succeded block
+//
 template<class dataType>
 int BlockNode::getSBlockNumber() const;
 {
 	return succeededBlock;
 }
 
+//
+// @brief Accessor for the preceded block
+//
+// @param None
+// @return This function returns the precededBlock
+// @pre None
+// @post This function returns the preceded block
 template<class dataType>
 int BlockNode::getPBlockNumber() const;
 {
 	return precededBlock;
 }
 
+//
+// @brief Setter for the succeeded block
+//
+// @param None
+// @return This function sets the val of the succeededBlock
+// @pre None
+// @post This function sets the value of the succeeded block
 template<class dataType>
 void BlockNode::setSBlock(const int &val)
 {
 	succeededBlock = val;
 }
 
+//
+// @brief Setter for the preceded block
+//
+// @param None
+// @return This function sets the val of the precededBlock
+// @pre None
+// @post This function sets the value of the preceded block
 template<class dataType> 
 void BlockNode::setPBlock(const int &val)
 {
