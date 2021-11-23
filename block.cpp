@@ -149,7 +149,7 @@ void Block::setindex(std::string Indexfile){
  * @pre 
  * @post The size and contents of the buffer are read and set.
 */
-int Block::Read(std::istream& in_s){
+int Block::Readheader(std::istream& in_s){
 	for (int i = 0; i < 17, i ++;){
 		std::string line;
 		getline(in_s, line);
@@ -173,7 +173,7 @@ int Block::Read(std::istream& in_s){
 // @return This returns 1 on success
 // @pre None
 // @post The record is written to the file 
-int Block::Write(std::ostream &out_s){
+int Block::Writeheader(std::ostream &out_s){
 		out_s << "blocked sequence set with comma separated fields, length-indicated records" << endl
 		 << "1" << endl
 		 << "1024" << endl
