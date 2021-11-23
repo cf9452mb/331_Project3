@@ -7,27 +7,27 @@
 
 int main(int argc, const char* argv[])
 {
-	if(argc < 2)
-	{
-		cerr << "Invalid number of arguements!" << endl;
-		exit(1);
-	}
+	//get arguments
+	string fileName = argv[1];
+	Block<Location> aBlock(fileName);
+	//BlockNode<Location> aNode = aBlock.readBlock(1);
+	string command = argv[2];
 	
-	while ((argc > 2) && (argv[2][0] == '-'))
+	//commands
+	if (command[0] == '-')
 	{
-		switch (argv [2] [1])
-		{
-			case 'Z':
-				number = atoi(&argv[2][2]);
-				zipcodes.push_back(number);
-				break;
-				
-			default:
-				cerr << "invalid arguement: " << argv[2] << "\n";
+		if(command[1] == 'z') 			aBlock.findRecord(argv[2]);
+		else if (command[1] == 's')		aBlock.sortRecords();
+		else
+		{ 
+			cout << "Invalid command..." << endl;
+			return 0;
 		}
-		
-	++argv;
-	--argc;
+	}
+	else
+	{ 
+		cout << "Invalid command..." << endl;
+		return 0;	
 	}
 
 	return 0;
