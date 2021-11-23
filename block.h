@@ -31,6 +31,15 @@ std::string sequence_set, indexFile;
 
 public:
 /**
+ *  Constructor
+ *
+ * @param String s
+ * @return This function sets the string to the data member sequence_set
+ * @pre None
+ * @post This function sets the string to the data member sequence_set
+*/
+Block(string s);
+/**
  *  accessor for block_count
  *
  * @param None
