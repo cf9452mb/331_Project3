@@ -4,8 +4,8 @@
 #include <iostream>
 using namespace std;
 #include "BlockNode.h"
-template<class dataType>
 
+template<class dataType>
 int BlockNode::str2int (const string &s) const
 {
 	int result = 0;
@@ -17,6 +17,8 @@ int BlockNode::str2int (const string &s) const
 	return result;
 }
 
+
+template<class dataType>
 BlockNode::BlockNode()
 {
 	blockNumber = 0;
@@ -26,21 +28,29 @@ BlockNode::BlockNode()
 	datasize = 0;
 }
 
+
+template<class dataType>
 int BlockNode::getBlockNumber()
 {
 	return blockNumber;
 }
 
+
+template<class dataType>
 int BlockNode::getDataSize()
 {
 	return datasize;
 }
 
+
+template<class dataType>
 int BlockNode::getNumRecs()
 {
 	return numberOfRecords;
 }
 
+
+template<class dataType>
 dataType BlockNode::getData(const int num){
 dataType datas;
 if (num < data.size() && num>=0)
