@@ -192,3 +192,9 @@ bool BlockBuffer::unpackField(string &aStr)
 	aStr = buffer.substr(start, len);
 	return true;
 }
+
+/// @brief Increments the index so the Length is not included in the Zip Code
+void DelimBuffer :: increment()
+{
+    nextCharIndex += 2;
+}
