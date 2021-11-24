@@ -230,6 +230,55 @@ BlockNode<dataType> Block::readBlock(const int &pos){
 	}
 	return Bnode;
 }
+
+/// @brief Find desired block based on key passed in
+template<class dataType>
+int Block<dataType> :: findDesiredBlock(const string &key)
+{
+	//open file
+	ifstream indexFile;
+	indexFile.open(indexFilename);
+	
+	//get the desired block
+	int desiredBlock = -1, i;
+	string oldline, zip = "", blockStr = "";
+	while (!indexFile.eof())
+	{
+		string line;
+		getline(indexFile, line);
+		if (line.length() == 0) continue;
+		zip = ""; blockStr = "";
+		for (i = 0; i < line.length(); i++)
+		{
+			if (line[i] == ',') break;
+			else zip += line[i];
+		}
+		if (str2int(zip) >= str2int(key))
+		{
+			i++;
+            for ( ; i < line.length(); i++) {
+                blockStr += line[i];
+            }
+			desiredBlock = str2int(blockStr);
+			return desiredBlock;
+		}
+		oldline = line;
+	}
+	
+	for (i = 0; i < oldline.length(); i++)
+	{
+		if (oldline[i] == ',') break;
+		else zip += oldline[i];
+	}
+	i++;
+	for ( ; i < oldline.length(); i++) blockStr += oldline[i];
+	desiredBlock = str2int(blockStr);
+	return desiredBlock;
+	
+	//close and return
+	indexFile.close();
+	return desiredBlock;
+}
 		
 bool Block::findRecord(const string &keyStr){
 	
