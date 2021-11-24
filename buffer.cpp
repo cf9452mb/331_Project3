@@ -77,7 +77,7 @@ int BlockBuffer::getSBlockNumber() const
 // @return pBlockNumber
 int BlockBuffer::getPBlockNumber() const
 {
-	return this->pBlockBuffer;
+	return this->pBlockNumber;
 }
 
 // @brief Clear the buffer
