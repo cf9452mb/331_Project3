@@ -158,7 +158,7 @@ void Block<dataType> ::setindex(std::string Indexfile){
 */
 template<class dataType>
 int Block<dataType> ::Readheader(std::istream& in_s){
-	for (int i = 0; i < 17, i ++;){
+	for (int i = 0; i < 17; i ++){
 		std::string line;
 		getline(in_s, line);
 		if (i == 5)
@@ -241,8 +241,8 @@ template<class dataType>
 int Block<dataType> :: findDesiredBlock(const string &key)
 {
 	//open file
-	ifstream indexFile;
-	indexFile.open(indexFile);
+	ifstream file;
+	file.open(indexFile);
 	
 	//get the desired block
 	int desiredBlock = -1, i;
