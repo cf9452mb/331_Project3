@@ -9,14 +9,9 @@
 // includes functions that will set the values of set the values of block count, record count, head block number,
 //			available list, sequence set file and index file as well as functions to get those values after they are set.
 //-------------------------------------------------------------
-#include <string>
-#include <vector>
-#include <fstream>
-#include <stdio.h>
-#include <sstream>
+
 #include "block.h"
-#include "BlockNode.h"
-#include "buffer.h"
+
 //
 // @file block.cpp
 // @brief This is the implementation file for the class Block
