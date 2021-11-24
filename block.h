@@ -9,6 +9,7 @@
 
 #ifndef BLOCK_H
 #define BLOCK_H
+#include <string>
 /**
  * @file block.h
  * @brief This is the header file for the block class
