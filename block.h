@@ -10,7 +10,7 @@
 #ifndef BLOCK_H
 #define BLOCK_H
 #include <string>
-template<class dataType>
+
 /**
  * @file block.h
  * @brief This is the header file for the block class
@@ -24,11 +24,12 @@ template<class dataType>
  *			available list, sequence set file and index file.
  * @author Myint Aung
 */
+template<class dataType>
 class Block
 { 
 private:
 int blockCount, record_count, headblock_no, maxBlockSize, totalRec, availBlock; 
-std::vector<int>avail_list;
+std::vector<int> avail_list;
 std::string sequence_set, indexFile;
 
 public:
