@@ -75,7 +75,7 @@ int BlockBuffer::getSBlockNumber() const
 // @pre None
 // @post This function returns the pBlockNumber.
 // @return pBlockNumber
-int BlockBuffer::getPBlockBuffer() const
+int BlockBuffer::getPBlockNumber() const
 {
 	return this->pBlockBuffer;
 }
