@@ -109,7 +109,7 @@ class Location
 	/// @pre buffer must be declared and readed the data file before calling this method
 	/// @post Pass the next fields data to the Location object
 	/// @return Returns true if unpacked successfully
-        bool unpack(DelimBuffer &buffer);
+        bool unpack(BlockBuffer &buffer);
         
 	/// @brief Overloaded assignment operator for a location object
 	/// @param Location class object
