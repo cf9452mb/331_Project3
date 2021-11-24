@@ -2,8 +2,13 @@
 // main.cpp
 //--------------------------------------------------
 
+#include "Block.h"
+#include "BlockNode.h"
+#include "Location.h"
 #include <iostream>
-#include <cstdlib>
+#include <fstream>
+#include <string>
+#include <vector>
 
 int main(int argc, const char* argv[])
 {
