@@ -1,5 +1,8 @@
 //--------------------------------------------------
 // main.cpp
+//
+// format: ./a.out blocked-sequenced-set-file -z00000		Search for a zip code
+// format: ./a.out blocked-sequenced-set-file -s		Sort records
 //--------------------------------------------------
 
 #include "Block.h"
