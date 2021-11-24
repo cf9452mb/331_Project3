@@ -125,7 +125,7 @@ dataType BlockNode<dataType> ::getData(const int num) const{
 // @post This function returns the succeded block
 //
 template<class dataType>
-int BlockNode<dataType> ::getSBlockNumber() const;
+int BlockNode<dataType> ::getSBlockNumber() const
 {
 	return succeededBlock;
 }
@@ -138,7 +138,7 @@ int BlockNode<dataType> ::getSBlockNumber() const;
 // @pre None
 // @post This function returns the preceded block
 template<class dataType>
-int BlockNode<dataType> ::getPBlockNumber() const;
+int BlockNode<dataType> ::getPBlockNumber() const
 {
 	return precededBlock;
 }
