@@ -166,7 +166,7 @@ int Block<dataType> ::Readheader(std::istream& in_s){
 	for (int i = 0; i < 17, i ++;){
 		std::string line;
 		getline(in_s, line);
-		if (i = 5)
+		if (i == 5)
 		{maxBlockSize = str2int(line);}
 	if (i == 7)
 		{indexFile = line;}
