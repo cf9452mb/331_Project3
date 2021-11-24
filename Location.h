@@ -19,7 +19,7 @@
 #ifndef LOCATION_HEADER
 #define LOCATION_HEADER
 
-#include "DelimBuffer.h"
+#include "BlockBuffer.h"
 #include <string>
 #include <iostream>
 #include <vector>
