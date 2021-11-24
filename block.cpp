@@ -210,25 +210,23 @@ BlockNode<dataType> Block::readBlock(const int &pos){
     }
     	Block b;
 	b.Readheader(sequence_set);
-	BlockBuffer Bbuff;
+	DelimBuffer buffer;
 	curblock = 1;
 	while ( curblock <= blockCount)
 	{
-		Bbuff.read(readb);
-		if (Bbuff.getBlocknumber == curblock)
+		buffer.read(readb);
+		if (buffer.getBlocknumber == curblock)
 		{break;}
 		curblock++;
 	}
-	BlockNode Bnode;
-	Bnode.setSBlock = Bbuff.getSBlockNumber;
-	Bnode.setPBlock = Bbuff.getPBlockBuffer;
-	for (int i = 0; i < Bbuff.getNumRecs; i ++)
+	BlockNode<dataType> thisBlock(buffer.getBlockNumber(), buffer.getSBlockNumber(), buffer.getPBlockNumber());
+	for(int i = 0; i < buffer.getNumRecs(); i++)
 	{
-		dataType newentry;
-		newentry.unpack(Bbuff);
-		Bnode.getData(newentry);
+		dataType newEntry;
+		newEntry.unpack(buffer);
+		thisBlock.addData(newEntry);
 	}
-	return Bnode;
+	return thisBlock;
 }
 
 /// @brief Find desired block based on key passed in
