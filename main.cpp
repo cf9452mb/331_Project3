@@ -5,7 +5,7 @@
 // format: ./a.out blocked-sequenced-set-file -s		Sort records
 //--------------------------------------------------
 
-#include "Block.h"
+#include "block.h"
 #include "BlockNode.h"
 #include "Location.h"
 #include <iostream>
