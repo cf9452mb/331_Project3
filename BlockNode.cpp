@@ -168,3 +168,23 @@ void BlockNode<dataType> ::setPBlock(const int &val)
 {
 	precededBlock = val;
 }
+
+/// @brief Add new data entry
+template<class dataType>
+bool BlockNode<dataType> :: addData(const dataType &anEntry)
+{
+	int position;
+	dataType curEntry;
+	string key = anEntry.getKey();
+	for (position = 0; position < data.size(); position++)
+	{
+		curEntry = data[position];
+		string curKey = curEntry.getKey();
+		if(str2int(curKey) > str2int(key)) break;
+	}
+	auto itPos = data.begin() + position;
+	auto newIt = data.insert(itPos, anEntry);
+	
+	numberOfRecords = data.size();
+	return true;
+}
