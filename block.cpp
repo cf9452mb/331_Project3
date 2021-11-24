@@ -208,6 +208,8 @@ BlockNode<dataType> Block::readBlock(const int &pos){
         cout << "Failed to open Data file! Exiting program" << endl;
         exit(1);
     }
+    	Block b;
+	b.Readheader(sequence_set);
 	BlockBuffer Bbuff;
 	curblock = 1;
 	while ( curblock <= blockCount)
@@ -222,7 +224,7 @@ BlockNode<dataType> Block::readBlock(const int &pos){
 	Bnode.setPBlock = Bbuff.getPBlockBuffer;
 	for (int i = 0; i < Bbuff.getNumRecs; i ++)
 	{
-		Blockbuffer newentry;
+		dataType newentry;
 		newentry.unpack(Bbuff);
 		Bnode.getData(newentry);
 	}
