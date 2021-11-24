@@ -9,6 +9,8 @@
 
 #ifndef BLOCK_H
 #define BLOCK_H
+#include "BlockNode.h"
+#include "buffer.h"
 #include <string>
 #include <vector>
 
