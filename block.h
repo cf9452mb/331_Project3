@@ -157,9 +157,9 @@ BlockNode<dataType> readBlock(const int &pos);
  /// @brief Find fit block
 	/// @param key A string
 	/// @return The desired block for the key
-	int findDesiredBlock(const string &key);
+	int findDesiredBlock(const std::string &key);
 
-bool findRecord(const string &keyStr);
+bool findRecord(const std::string &keyStr);
  
 void sortRecords();
 };
