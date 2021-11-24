@@ -1,7 +1,7 @@
 //------------------------------------------------------------------
 // block.h
 // Block class 
-// Author: Myint Aung
+// Author: Myint Aung, Jordan Hebler
 //------------------------------------------------------------------
 // This header file includes the block class
 // It includes the data members of the block class and the functions to read and write headers.
@@ -151,6 +151,11 @@ int str2int (const string &s) const;
 /// @brief Read block at a position
 /// @param The block need to be read position
 BlockNode<dataType> readBlock(const int &pos);
+ 
+ /// @brief Find fit block
+	/// @param key A string
+	/// @return The desired block for the key
+	int findDesiredBlock(const string &key);
 
 bool findRecord(const string &keyStr);
  
