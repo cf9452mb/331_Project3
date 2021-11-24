@@ -43,7 +43,7 @@ BlockNode<dataType> :: BlockNode(const int &bNum, const int &sBlock, const int &
 
 //Converting int to string
 template<class dataType>
-int BlockNode::str2int (const string &s) const
+int BlockNode<dataType> ::str2int (const string &s) const
 {
 	int result = 0;
 	for (int i = 0; i < s.length(); i++)
@@ -65,7 +65,7 @@ int BlockNode::str2int (const string &s) const
 // @post This function returns the block number
 //
 template<class dataType>
-int BlockNode::getBlockNumber()
+int BlockNode<dataType> ::getBlockNumber()
 {
 	return blockNumber;
 }
@@ -79,7 +79,7 @@ int BlockNode::getBlockNumber()
 // @post This function returns the size of the data
 //
 template<class dataType>
-int BlockNode::getDataSize()
+int BlockNode<dataType> ::getDataSize()
 {
 	return datasize;
 }
@@ -93,7 +93,7 @@ int BlockNode::getDataSize()
 // @post This function returns the number of records
 //
 template<class dataType>
-int BlockNode::getNumRecs()
+int BlockNode<dataType> ::getNumRecs()
 {
 	return numberOfRecords;
 }
@@ -107,13 +107,13 @@ int BlockNode::getNumRecs()
 // @post This function returns the data
 //
 template<class dataType>
-dataType BlockNode::getData(const int num){
-dataType datas;
-if (num < data.size() && num>=0)
-{
-	datas = data[num];
-}
-return datas;
+dataType BlockNode<dataType> ::getData(const int num){
+	dataType datas;
+	if (num < data.size() && num>=0)
+	{
+		datas = data[num];
+	}
+	return datas;
 }
 
 //
@@ -125,7 +125,7 @@ return datas;
 // @post This function returns the succeded block
 //
 template<class dataType>
-int BlockNode::getSBlockNumber() const;
+int BlockNode<dataType> ::getSBlockNumber() const;
 {
 	return succeededBlock;
 }
@@ -138,7 +138,7 @@ int BlockNode::getSBlockNumber() const;
 // @pre None
 // @post This function returns the preceded block
 template<class dataType>
-int BlockNode::getPBlockNumber() const;
+int BlockNode<dataType> ::getPBlockNumber() const;
 {
 	return precededBlock;
 }
@@ -151,7 +151,7 @@ int BlockNode::getPBlockNumber() const;
 // @pre None
 // @post This function sets the value of the succeeded block
 template<class dataType>
-void BlockNode::setSBlock(const int &val)
+void BlockNode<dataType> ::setSBlock(const int &val)
 {
 	succeededBlock = val;
 }
@@ -164,7 +164,7 @@ void BlockNode::setSBlock(const int &val)
 // @pre None
 // @post This function sets the value of the preceded block
 template<class dataType> 
-void BlockNode::setPBlock(const int &val)
+void BlockNode<dataType> ::setPBlock(const int &val)
 {
 	precededBlock = val;
 }
