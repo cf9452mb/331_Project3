@@ -227,7 +227,7 @@ BlockNode<dataType> Block<dataType> ::readBlock(const int &pos){
 	while ( curblock <= blockCount)
 	{
 		buffer.read(readb);
-		if (buffer.getBlockNumber == curblock)
+		if (buffer.getBlockNumber() == curblock)
 		{break;}
 		curblock++;
 	}
