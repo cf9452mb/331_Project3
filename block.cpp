@@ -210,7 +210,7 @@ BlockNode<dataType> Block::readBlock(const int &pos){
     }
     	Block b;
 	b.Readheader(sequence_set);
-	DelimBuffer buffer;
+	BlockBuffer buffer;
 	curblock = 1;
 	while ( curblock <= blockCount)
 	{
