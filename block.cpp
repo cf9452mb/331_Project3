@@ -23,14 +23,16 @@
 //
 // @author Myint Aung
 //
-template<class dataType>
+
 //Constructor
-Block::Block(string s)
+template<class dataType>
+Block<dataType> ::Block(string s)
 {
 	sequence_set = s;
 }
 //converting string to integer
-int Block::str2int (const string &s) const
+template<class dataType>
+int Block<dataType> ::str2int (const string &s) const
 {
 	int result = 0;
 	for (int i = 0; i < s.length(); i++)
@@ -49,7 +51,8 @@ int Block::str2int (const string &s) const
 // @pre None
 // @post This function returns the number of block counts.
 //
-const int Block::getblockcount(){
+template<class dataType>
+const int Block<dataType> ::getblockcount(){
     return blockCount;
 }
 //
@@ -60,7 +63,8 @@ const int Block::getblockcount(){
 // @pre None
 // @post This function returns the number of record counts.
 //
-const int Block::getrecordcount(){
+template<class dataType>
+const int Block<dataType> ::getrecordcount(){
     return record_count;
 }
 //
@@ -71,7 +75,8 @@ const int Block::getrecordcount(){
 // @pre None
 // @post This function returns the number of head blocks.
 //
-const int Block::getheadblock_no(){
+template<class dataType>
+const int Block<dataType> ::getheadblock_no(){
     return headblock_no;
 }
 //
@@ -82,7 +87,8 @@ const int Block::getheadblock_no(){
 // @pre None
 // @post This function sets the value of available list.
 //
-void Block::setavail_list(std::vector<int> list){
+template<class dataType>
+void Block<dataType> ::setavail_list(std::vector<int> list){
     avail_list = list;
 }
 //
@@ -93,7 +99,8 @@ void Block::setavail_list(std::vector<int> list){
 // @pre None
 // @post This function sets the value of block count.
 //
-void Block::setblockcount(int bcount){
+template<class dataType>
+void Block<dataType> ::setblockcount(int bcount){
     blockCount = bcount;
 }
 //
@@ -104,7 +111,8 @@ void Block::setblockcount(int bcount){
 // @pre None
 // @post This function sets the value of record count.
 //
-void Block::setrecordcount(int rcount){
+template<class dataType>
+void Block<dataType> ::setrecordcount(int rcount){
     record_count = rcount;
 }
 //
@@ -115,7 +123,8 @@ void Block::setrecordcount(int rcount){
 // @pre None
 // @post This function sets the value of head block number
 //
-void Block::setheadblock_no(int hblock){
+template<class dataType>
+void Block<dataType> ::setheadblock_no(int hblock){
     headblock_no = hblock;
 }
 
@@ -127,7 +136,8 @@ void Block::setheadblock_no(int hblock){
 // @pre None
 // @post This function returns the index file
 //
-const std::string Block::getindex(){
+template<class dataType>
+const std::string Block<dataType> ::getindex(){
     return indexFile;
 }
 
@@ -139,7 +149,8 @@ const std::string Block::getindex(){
 // @pre None
 // @post This function sets the value of index file
 //
-void Block::setindex(std::string Indexfile){
+template<class dataType>
+void Block<dataType> ::setindex(std::string Indexfile){
     indexFile = Indexfile;
 }
 /**
@@ -150,7 +161,8 @@ void Block::setindex(std::string Indexfile){
  * @pre 
  * @post The size and contents of the buffer are read and set.
 */
-int Block::Readheader(std::istream& in_s){
+template<class dataType>
+int Block<dataType> ::Readheader(std::istream& in_s){
 	for (int i = 0; i < 17, i ++;){
 		std::string line;
 		getline(in_s, line);
@@ -174,7 +186,8 @@ int Block::Readheader(std::istream& in_s){
 // @return This returns 1 on success
 // @pre None
 // @post The record is written to the file 
-int Block::Writeheader(std::ostream &out_s){
+template<class dataType>
+int Block<dataType> ::Writeheader(std::ostream &out_s){
 		out_s << "blocked sequence set with comma separated fields, length-indicated records" << endl
 		 << "1" << endl
 		 << "1024" << endl
@@ -332,8 +345,8 @@ bool Block<dataType> :: findRecord(const string &keyStr)
 	}
 }
 
-
-void Block::sortRecords(){
+template<class dataType>
+void Block<dataType> ::sortRecords(){
 	
 	
 	
