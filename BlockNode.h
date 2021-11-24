@@ -34,6 +34,9 @@ private:
 public:
 	/// @brief Default Constructor
 	BlockNode();
+	
+	/// @brief Constructor
+	BlockNode(const int &bNum, const int &sBlock, const int &pBlock);
 
 	/// @brief string to int converter
 	/// @return int value of the string s
