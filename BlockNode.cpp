@@ -79,7 +79,7 @@ int BlockNode<dataType> ::getBlockNumber() const
 // @post This function returns the size of the data
 //
 template<class dataType>
-int BlockNode<dataType> ::getDataSize()
+int BlockNode<dataType> ::getDataSize() const
 {
 	return datasize;
 }
@@ -93,7 +93,7 @@ int BlockNode<dataType> ::getDataSize()
 // @post This function returns the number of records
 //
 template<class dataType>
-int BlockNode<dataType> ::getNumRecs()
+int BlockNode<dataType> ::getNumRecs() const
 {
 	return numberOfRecords;
 }
@@ -107,7 +107,7 @@ int BlockNode<dataType> ::getNumRecs()
 // @post This function returns the data
 //
 template<class dataType>
-dataType BlockNode<dataType> ::getData(const int num){
+dataType BlockNode<dataType> ::getData(const int num) const{
 	dataType datas;
 	if (num < data.size() && num>=0)
 	{
