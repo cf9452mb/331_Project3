@@ -247,7 +247,7 @@ int Block<dataType> :: findDesiredBlock(const string &key)
 {
 	//open file
 	ifstream indexFile;
-	indexFile.open(indexFilename);
+	indexFile.open(indexFile);
 	
 	//get the desired block
 	int desiredBlock = -1, i;
