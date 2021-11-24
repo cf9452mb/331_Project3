@@ -65,7 +65,7 @@ int BlockNode<dataType> ::str2int (const string &s) const
 // @post This function returns the block number
 //
 template<class dataType>
-int BlockNode<dataType> ::getBlockNumber()
+int BlockNode<dataType> ::getBlockNumber() const
 {
 	return blockNumber;
 }
