@@ -39,7 +39,7 @@ public:
  * @pre None
  * @post This function sets the string to the data member sequence_set
 */
-Block(string s);
+Block(std::string s);
 /**
  *  accessor for block_count
  *
