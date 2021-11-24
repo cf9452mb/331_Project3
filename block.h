@@ -9,10 +9,13 @@
 
 #ifndef BLOCK_H
 #define BLOCK_H
+
 #include "BlockNode.h"
 #include "buffer.h"
-#include <string>
 #include <vector>
+#include <fstream>
+#include <iomanip>
+#include <algorithm>
 
 /**
  * @file block.h
