@@ -23,7 +23,7 @@ using namespace std;
 // @post None
 //
 template<class dataType>
-BlockNode::BlockNode()
+BlockNode<dataType> ::BlockNode()
 {
 	blockNumber = 0;
 	numberOfRecords = 0;
