@@ -216,7 +216,7 @@ BlockNode<dataType> Block<dataType> ::readBlock(const int &pos){
         cout << "Failed to open Data file! Exiting program" << endl;
         exit(1);
     }
-	Readheader(sequence_set);
+	Readheader(readb);
 	BlockBuffer buffer;
 	int curblock = 1;
 	while ( curblock <= blockCount)
