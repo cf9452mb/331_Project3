@@ -223,7 +223,7 @@ BlockNode<dataType> Block<dataType> ::readBlock(const int &pos){
     }
 	Readheader(sequence_set);
 	BlockBuffer buffer;
-	curblock = 1;
+	int curblock = 1;
 	while ( curblock <= blockCount)
 	{
 		buffer.read(readb);
