@@ -27,7 +27,7 @@ void BlockBuffer::setNumRecs(const int &val)
 // @pre None
 // @post This function sets the value of blockNumber.
 // @return None
-void BlockBuffer::setBlockNumber(const int &val);
+void BlockBuffer::setBlockNumber(const int &val)
 {
 	this->blockNumber = val;
 }
@@ -45,7 +45,7 @@ BlockBuffer::BlockBuffer(char del )
 // @pre None
 // @post This function returns the blockSize.
 // @return blockSize
-int BlockBuffer::getNumRecs() const;
+int BlockBuffer::getNumRecs() const
 {
 	return this->numRecs;
 }
@@ -55,7 +55,7 @@ int BlockBuffer::getNumRecs() const;
 // @pre None
 // @post This function returns the blockNumber.
 // @return blockNumber
-int BlockBuffer::getBlockNumber() const;
+int BlockBuffer::getBlockNumber() const
 {
 	return this->blockNumber;
 }
@@ -65,7 +65,7 @@ int BlockBuffer::getBlockNumber() const;
 // @pre None
 // @post This function returns the sBlockNumber.
 // @return sBlockNumber
-int BlockBuffer::getSBlockNumber() const;
+int BlockBuffer::getSBlockNumber() const
 {
 	return this->sBlockNumber;
 }
@@ -75,7 +75,7 @@ int BlockBuffer::getSBlockNumber() const;
 // @pre None
 // @post This function returns the pBlockNumber.
 // @return pBlockNumber
-int BlockBuffer::getPBlockBuffer() const;
+int BlockBuffer::getPBlockBuffer() const
 {
 	return this->pBlockBuffer;
 }
