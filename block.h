@@ -161,5 +161,7 @@ bool findRecord(const string &keyStr);
  
 void sortRecords();
 };
+
+#include "block.cpp"
 #endif
 
