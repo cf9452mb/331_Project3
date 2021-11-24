@@ -214,7 +214,7 @@ int Block<dataType> ::Writeheader(std::ostream &out_s){
 }
 
 template<class dataType>
-BlockNode<dataType> Block::readBlock(const int &pos){
+BlockNode<dataType> Block<dataType> ::readBlock(const int &pos){
 	ifstream readb;
 	readb.open(sequence_set);
 	    if(readb.fail()){
