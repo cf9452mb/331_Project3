@@ -60,7 +60,7 @@ public:
 	
 	// @brief Add new data entry
 	// @param anEntry An data entry
-	//bool addData(const dataType &anEntry);	This will be used for adding to the block
+	bool addData(const dataType &anEntry);	This will be used for adding to the block
 		
 	// @brief Remove a data entry by position
 	// @param position The position need to be removed
