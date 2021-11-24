@@ -247,10 +247,10 @@ int Block<dataType> :: findDesiredBlock(const string &key)
 	//get the desired block
 	int desiredBlock = -1, i;
 	string oldline, zip = "", blockStr = "";
-	while (!indexFile.eof())
+	while (!file.eof())
 	{
 		string line;
-		getline(indexFile, line);
+		getline(file, line);
 		if (line.length() == 0) continue;
 		zip = ""; blockStr = "";
 		for (i = 0; i < line.length(); i++)
@@ -281,7 +281,7 @@ int Block<dataType> :: findDesiredBlock(const string &key)
 	return desiredBlock;
 	
 	//close and return
-	indexFile.close();
+	file.close();
 	return desiredBlock;
 }
 		
