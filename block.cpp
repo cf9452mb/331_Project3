@@ -168,13 +168,13 @@ int Block<dataType> ::Readheader(std::istream& in_s){
 		getline(in_s, line);
 		if (i = 5)
 		{maxBlockSize = str2int(line);}
-	if (i = 7)
+	if (i == 7)
 		{indexFile = line;}
-	if (i = 9)
+	if (i == 9)
 		{totalRec = str2int(line);}
-	if (i = 10)
+	if (i == 10)
 		{blockCount = str2int(line);}
-	if (i = 15)
+	if (i == 15)
 	{headblock_no = str2int(line);}
 	}
 	return 0;
