@@ -14,19 +14,6 @@
 using namespace std;
 #include "BlockNode.h"
 
-//Converting int to string
-template<class dataType>
-int BlockNode::str2int (const string &s) const
-{
-	int result = 0;
-	for (int i = 0; i < s.length(); i++)
-	{
-		int num = s[i] - '0';
-		result = result*10 + num;
-	}
-	return result;
-}
-
 //
 // @brief Default constructor for block node
 //
@@ -44,6 +31,30 @@ BlockNode::BlockNode()
 	precededBlock = 0;
 	datasize = 0;
 }
+
+/// @brief Constructor
+template<class dataType>
+BlockNode<dataType> :: BlockNode(const int &bNum, const int &sBlock, const int &pBlock)
+{
+	blockNumber = bNum;
+	setSBlock(sBlock);
+	setPBlock(pBlock);
+}
+
+//Converting int to string
+template<class dataType>
+int BlockNode::str2int (const string &s) const
+{
+	int result = 0;
+	for (int i = 0; i < s.length(); i++)
+	{
+		int num = s[i] - '0';
+		result = result*10 + num;
+	}
+	return result;
+}
+
+
 
 //
 // @brief Accessor for Block Number
