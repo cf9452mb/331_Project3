@@ -1,7 +1,7 @@
 //-------------------------------------------------------------
 // block.cpp
 // This is the implementation file for the block.h
-// Author: Myint Aung
+// Author: Myint Aung, Jordan Hebler
 //-------------------------------------------------------------
 // This .cpp file contains the functions of the class Block
 //
@@ -277,10 +277,59 @@ int Block<dataType> :: findDesiredBlock(const string &key)
 	return desiredBlock;
 }
 		
-bool Block::findRecord(const string &keyStr){
+/// @brief Find records
+template<class dataType>
+bool Block<dataType> :: findRecord(const string &keyStr)
+{
+	//get the key zip code
+	int key = 0;
+	string keyS = "";
+    	for (int i = 2; i < keyStr.length(); i++){
+        	int num = keyStr[i] - '0';
+        	key = key * 10 + num;
+        	keyS += keyStr[i];
+    	}
 	
+	//check if the record is found or not
+	int pos = findDesiredBlock(keyS);
+    
+	if(pos < 0) 
+		{cout << "Zip Code " << key << " is not found..." << endl; return false;}
 	
+	//target = desired output
+	BlockNode<dataType> posBlock = readBlock(pos);
+	dataType target;
+	int i;
+	for (i = 0; i < posBlock.getNumRecs(); i++)
+	{
+		target = posBlock.getData(i);
+		if(target.getKey() == keyS) break;
+	}
 	
+	//print result if found
+	if (i == posBlock.getNumRecs())
+		{cout << "Zip Code " << key << " is not found..." << endl; return false;}
+	else
+	{
+		cout << "+---------------------------------------------------------------------------------------+" << endl
+			 << '|' << setw(7) << "Zipcode"
+			 << '|' << setw(5) << "State"
+			 << '|' << setw(20) << "County"
+			 << '|' << setw(30) << "Name"
+			 << '|' << setw(10) << "Latitude"
+			 << '|' << setw(10) << "Longitude"
+			 << '|' << endl
+			 << "+---------------------------------------------------------------------------------------+" << endl
+			 << '|' << setw(7) << target.getZipCode()
+			 << '|' << setw(5) << target.getState()
+			 << '|' << setw(20) << target.getCounty()
+			 << '|' << setw(30) << target.getPlace()
+			 << '|' << setw(10) << target.getLat()
+			 << '|' << setw(10) << target.getLong()
+			 << '|' << endl
+			 << "+---------------------------------------------------------------------------------------+" << endl;
+		return true;
+	}
 }
 
 
