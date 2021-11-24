@@ -15,7 +15,7 @@ int main(int argc, const char* argv[])
 	//get arguments
 	string fileName = argv[1];
 	Block<Location> aBlock(fileName);
-	//BlockNode<Location> aNode = aBlock.readBlock(1);
+	BlockNode<Location> aNode = aBlock.readBlock(1);
 	string command = argv[2];
 	
 	//commands
