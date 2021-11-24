@@ -58,9 +58,9 @@ public:
 	/// @return A record
 	dataType getData(const int num) const;
 	
-	// @brief Add new data entry
-	// @param anEntry An data entry
-	bool addData(const dataType &anEntry);	This will be used for adding to the block
+	/// @brief Add new data entry
+	/// @param anEntry An data entry
+	bool addData(const dataType &anEntry);
 		
 	// @brief Remove a data entry by position
 	// @param position The position need to be removed
