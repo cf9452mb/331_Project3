@@ -83,4 +83,5 @@ public:
 	void setPBlock(const int &val);
 };
 
+#include "BlockNode.cpp"
 #endif
