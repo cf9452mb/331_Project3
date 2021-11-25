@@ -208,6 +208,8 @@ int Block<dataType> ::Writeheader(std::ostream &out_s){
 	return 1;
 }
 
+// @brief Read block at a position
+// @param The block need to be read position
 template<class dataType>
 BlockNode<dataType> Block<dataType> ::readBlock(const int &pos){
 	ifstream readb;
